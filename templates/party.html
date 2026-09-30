@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Party Planner{% endblock %}
+{% block content %}
+<div class="planner-page"><div class="form-card wide"><p class="eyebrow">PARTY PLANNER</p><h1>Plan the celebration, not the stress</h1><form id="plannerForm" data-endpoint="/generate-party">
+<label>Total budget (₹)<input type="number" name="budget" min="1" required placeholder="25000"></label>
+<label>Guest count<input type="number" name="guests" min="1" required placeholder="30"></label>
+<label>Event type<select name="event_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Family Function</option><option>Other</option></select></label>
+<label>Venue preference<input name="venue" placeholder="Chennai / indoor / outdoor..."></label>
+<label>Preferences<textarea name="preferences" placeholder="Vegetarian food, simple decor, music..."></textarea></label>
+<button class="btn" type="submit">Generate Party Plan ✦</button></form></div>
+<div id="loading" class="loading hidden">PocketSmart AI is preparing your recommendations…</div>
+<div id="result" class="result"></div></div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/planner.js"></script>{% endblock %}

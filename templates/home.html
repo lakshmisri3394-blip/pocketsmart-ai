@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home Interior Planner{% endblock %}
+{% block content %}
+<div class="planner-page"><div class="form-card wide"><p class="eyebrow">HOME INTERIOR</p><h1>Build your space within budget</h1><form id="plannerForm" data-endpoint="/generate-home">
+<label>Total budget (₹)<input type="number" name="budget" min="1" required placeholder="50000"></label>
+<label>Room type<select name="room_type"><option>Living Room</option><option>Bedroom</option><option>Kitchen</option><option>Dining Room</option><option>Multiple Rooms</option></select></label>
+<label>Style<select name="style"><option>Modern</option><option>Minimal</option><option>Traditional</option><option>Luxury</option><option>Budget Friendly</option></select></label>
+<label>Items and quantities<textarea name="items" placeholder="2 lights, 1 ceiling fan, 1 table..."></textarea></label>
+<label>Additional notes<textarea name="notes" placeholder="Room size, colors, preferences..."></textarea></label>
+<button class="btn" type="submit">Generate Recommendations ✦</button></form></div>
+<div id="loading" class="loading hidden">PocketSmart AI is preparing your recommendations…</div>
+<div id="result" class="result"></div></div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/planner.js"></script>{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login — PocketSmart AI{% endblock %}
+{% block content %}
+<div class="auth-wrap"><form class="form-card" method="post" action="/login">
+<h2>Welcome back</h2><p>Continue your smart planning journey.</p>
+{% if request.query_params.get("error") %}<div class="error">{{request.query_params.get("error")}}</div>{% endif %}
+{% if request.query_params.get("success") %}<div class="success">{{request.query_params.get("success")}}</div>{% endif %}
+<label>Email<input type="email" name="email" required></label>
+<label>Password<input type="password" name="password" required></label>
+<button class="btn" type="submit">Login</button>
+<p class="center">New here? <a href="/register">Create an account</a></p>
+</form></div>
+{% endblock %}

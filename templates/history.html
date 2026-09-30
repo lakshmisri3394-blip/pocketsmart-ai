@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Recommendation History{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">HISTORY</p><h1>Your saved plans</h1><p>Review previous PocketSmart AI recommendations.</p></section>
+<div class="history">
+{% if rows %}
+{% for r in rows %}
+<details class="history-card"><summary><strong>{{r.category}}</strong> · ₹{{"{:,.0f}".format(r.budget)}} · {{r.created_at}}</summary>
+<pre>{{r.result_json}}</pre></details>
+{% endfor %}
+{% else %}<div class="empty">No recommendations yet. Create your first plan from the dashboard.</div>{% endif %}
+</div>
+{% endblock %}

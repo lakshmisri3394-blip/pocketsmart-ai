@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — PocketSmart AI{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">DASHBOARD</p><h1>Hi, {{user.name}} 👋</h1><p>Choose a planner and tell PocketSmart AI what you need.</p></section>
+<div class="planner-grid">
+<a class="planner-card" href="/planner/home"><span>🏠</span><h2>Home Interior</h2><p>Plan rooms, furniture, lighting and decor.</p></a>
+<a class="planner-card" href="/planner/party"><span>🎉</span><h2>Party Planner</h2><p>Allocate your event budget across food, venue and decor.</p></a>
+<a class="planner-card" href="/planner/jewelry"><span>💎</span><h2>Jewelry Planner</h2><p>Get occasion and outfit-aware jewelry ideas.</p></a>
+</div>
+{% endblock %}

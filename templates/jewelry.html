@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Jewelry Planner{% endblock %}
+{% block content %}
+<div class="planner-page"><div class="form-card wide"><p class="eyebrow">JEWELRY PLANNER</p><h1>Find a look that fits your occasion</h1><form id="plannerForm" data-endpoint="/generate-jewelry" enctype="multipart/form-data">
+<label>Budget (₹)<input type="number" name="budget" min="1" required placeholder="5000"></label>
+<label>Occasion<select name="occasion"><option>Wedding</option><option>Festival</option><option>Party</option><option>College Event</option><option>Casual</option></select></label>
+<label>Style<select name="style"><option>Elegant</option><option>Minimal</option><option>Traditional</option><option>Trendy</option><option>Statement</option></select></label>
+<label>Outfit description<textarea name="outfit_description" placeholder="Color, neckline, fabric, overall style..."></textarea></label>
+<label>Optional outfit image<input type="file" name="outfit_image" accept="image/*"></label>
+<button class="btn" type="submit">Generate Jewelry Ideas ✦</button></form></div>
+<div id="loading" class="loading hidden">PocketSmart AI is preparing your recommendations…</div>
+<div id="result" class="result"></div></div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/planner.js"></script>{% endblock %}

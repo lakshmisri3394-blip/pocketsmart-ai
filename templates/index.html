@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}PocketSmart AI — Smart Budget Assistant{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">AI-POWERED BUDGET PLANNING</p>
+    <h1>Plan smarter.<br><span>Spend better.</span></h1>
+    <p class="lead">PocketSmart AI turns your budget and preferences into practical recommendations for your home, parties and special occasions.</p>
+    <div class="actions"><a class="btn" href="/register">Start Planning</a><a class="btn ghost" href="/login">I already have an account</a></div>
+  </div>
+  <div class="hero-card"><div class="orb">✦</div><h3>One budget. Smarter choices.</h3><p>Personalized recommendations powered by generative AI.</p></div>
+</section>
+<section class="features">
+{% for x in [("🏠","Home Interior","Furniture, lighting, decor and more."),("🎉","Party Planner","Food, venue and decoration planning."),("💎","Jewelry Planner","Occasion and outfit-aware suggestions.")] %}
+<div class="card"><div class="icon">{{x[0]}}</div><h3>{{x[1]}}</h3><p>{{x[2]}}</p></div>
+{% endfor %}
+</section>
+{% endblock %}
